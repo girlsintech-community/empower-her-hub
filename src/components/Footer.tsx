@@ -1,23 +1,22 @@
-import { Instagram, Linkedin, Heart, Mail, Globe, Youtube } from "lucide-react";
+import { Instagram, Linkedin, Heart, Mail, Youtube } from "lucide-react";
 
 const footerLinks = [
   { label: "About", href: "#about" },
   { label: "Agenda", href: "#agenda" },
   { label: "Speakers", href: "#speakers" },
   { label: "FAQ", href: "#faq" },
+  { label: "Empower Her 1.0 Recap", href: "https://empowerher.girlsleadingtech.com/", external: true },
 ];
 
 const socialLinks = [
   { icon: Instagram, href: "https://www.instagram.com/girlsleadingtech/", label: "Instagram" },
   { icon: Linkedin, href: "https://www.linkedin.com/company/girlsleadingtech/", label: "LinkedIn" },
   { icon: Youtube, href: "https://www.youtube.com/@girlsleadingtech", label: "YouTube" },
-  { icon: Globe, href: "https://girlsleadingtech.com", label: "Website" },
 ];
 
 const Footer = () => {
   return (
     <footer className="relative bg-foreground/5 border-t border-border">
-      {/* Gradient top accent */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
@@ -25,20 +24,13 @@ const Footer = () => {
           {/* Brand */}
           <div className="text-center md:text-left">
             <h3 className="font-heading font-bold text-2xl text-foreground mb-3">
-              <span>Girls Leading </span>
-              <span className="gradient-text">Tech</span>
+              <span>Empower</span>
+              <span className="shimmer-text">Her</span>
+              <span className="text-lg font-medium text-muted-foreground ml-1">2.0</span>
             </h3>
             <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
               Empowering the next generation of women in tech.
             </p>
-            <a
-              href="https://girlsleadingtech.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm text-primary hover:underline font-medium"
-            >
-              girlsleadingtech.com
-            </a>
           </div>
 
           {/* Quick Links */}
@@ -46,25 +38,16 @@ const Footer = () => {
             <h4 className="font-heading font-semibold text-foreground mb-4">Quick Links</h4>
             <ul className="space-y-2.5">
               {footerLinks.map((link) => (
-                <li key={link.href}>
+                <li key={link.label}>
                   <a
                     href={link.href}
+                    {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                     className="text-sm text-muted-foreground hover:text-primary transition-colors"
                   >
                     {link.label}
                   </a>
                 </li>
               ))}
-              <li>
-                <a
-                  href="https://empowerher.girlsleadingtech.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
-                >
-                  Empower Her 1.0 Recap
-                </a>
-              </li>
             </ul>
           </div>
 
@@ -97,7 +80,7 @@ const Footer = () => {
 
         <div className="mt-10 pt-6 border-t border-border text-center">
           <p className="text-sm text-muted-foreground flex items-center justify-center gap-1.5">
-            Built with <Heart className="w-4 h-4 text-primary fill-primary" /> for Women in Tech
+            Built with <Heart className="w-4 h-4 text-primary fill-primary" /> by Girls Leading Tech
           </p>
         </div>
       </div>

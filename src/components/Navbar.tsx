@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Moon, Sun } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+
+const REGISTER_URL = "https://luma.com/vmnm3u4c";
 
 const navLinks = [
   { href: "#about", label: "About" },
@@ -14,12 +16,19 @@ const navLinks = [
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [dark, setDark] = useState(() => document.documentElement.classList.contains("dark"));
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const toggleTheme = () => {
+    const next = !dark;
+    setDark(next);
+    document.documentElement.classList.toggle("dark", next);
+  };
 
   return (
     <nav
@@ -49,18 +58,39 @@ const Navbar = () => {
               <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-primary to-accent scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-full" />
             </a>
           ))}
-          <Button variant="hero" size="sm" className="rounded-full shimmer-btn relative overflow-hidden">
-            <span className="relative z-10">Register Now</span>
-          </Button>
+
+          {/* Theme toggle */}
+          <button
+            onClick={toggleTheme}
+            className={`p-2 rounded-full transition-colors ${scrolled ? "text-muted-foreground hover:text-foreground" : "text-primary-foreground/70 hover:text-primary-foreground"}`}
+            aria-label="Toggle theme"
+          >
+            {dark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+          </button>
+
+          <a href={REGISTER_URL} target="_blank" rel="noopener noreferrer">
+            <Button variant="hero" size="sm" className="rounded-full shimmer-btn relative overflow-hidden">
+              <span className="relative z-10">Register Now</span>
+            </Button>
+          </a>
         </div>
 
-        {/* Mobile toggle */}
-        <button
-          onClick={() => setMobileOpen(!mobileOpen)}
-          className={`md:hidden p-2 ${scrolled ? "text-foreground" : "text-primary-foreground"}`}
-        >
-          {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
+        {/* Mobile controls */}
+        <div className="flex md:hidden items-center gap-2">
+          <button
+            onClick={toggleTheme}
+            className={`p-2 ${scrolled ? "text-foreground" : "text-primary-foreground"}`}
+            aria-label="Toggle theme"
+          >
+            {dark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+          </button>
+          <button
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className={`p-2 ${scrolled ? "text-foreground" : "text-primary-foreground"}`}
+          >
+            {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile menu */}
@@ -87,9 +117,11 @@ const Navbar = () => {
                   {link.label}
                 </motion.a>
               ))}
-              <Button variant="hero" size="sm" className="w-full rounded-full mt-3">
-                Register Now
-              </Button>
+              <a href={REGISTER_URL} target="_blank" rel="noopener noreferrer" className="block mt-3">
+                <Button variant="hero" size="sm" className="w-full rounded-full">
+                  Register Now
+                </Button>
+              </a>
             </div>
           </motion.div>
         )}
