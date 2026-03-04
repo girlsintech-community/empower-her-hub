@@ -42,7 +42,6 @@ const SpeakersSection = () => {
           </div>
         </motion.div>
 
-        {/* Past speakers */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -54,7 +53,7 @@ const SpeakersSection = () => {
           </h3>
         </motion.div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 sm:gap-8">
           {pastSpeakers.map((speaker, index) => (
             <motion.div
               key={speaker.name}
@@ -63,7 +62,7 @@ const SpeakersSection = () => {
               transition={{ duration: 0.4, delay: 0.1 * index }}
               className="text-center group"
             >
-              <div className="mx-auto mb-4 w-28 h-28 sm:w-32 sm:h-32 gradient-ring transition-shadow duration-300">
+              <div className="mx-auto mb-4 w-36 h-36 sm:w-40 sm:h-40 gradient-ring transition-shadow duration-300">
                 <div className="w-full h-full rounded-full overflow-hidden bg-card">
                   <img
                     src={speaker.image}
@@ -72,9 +71,9 @@ const SpeakersSection = () => {
                   />
                 </div>
               </div>
-              <h4 className="font-heading font-bold text-sm text-foreground mb-1">{speaker.name}</h4>
-              <p className="text-xs text-muted-foreground">{speaker.title}</p>
-              <p className="text-xs font-semibold text-secondary">{speaker.company}</p>
+              <h4 className="font-heading font-bold text-sm sm:text-base text-foreground mb-1">{speaker.name}</h4>
+              <p className="text-xs sm:text-sm text-muted-foreground">{speaker.title}</p>
+              <p className="text-xs sm:text-sm font-semibold text-secondary">{speaker.company}</p>
             </motion.div>
           ))}
         </div>

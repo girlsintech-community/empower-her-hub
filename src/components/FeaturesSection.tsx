@@ -57,7 +57,7 @@ const FeaturesSection = () => {
             >
               <div className="flex items-start gap-5">
                 <div className="flex-shrink-0">
-                  <span className="text-xs font-heading font-bold text-muted-foreground/40 block mb-2">
+                  <span className="text-sm font-heading font-bold text-primary/60 block mb-2">
                     {String(index + 1).padStart(2, "0")}
                   </span>
                   <div className="w-14 h-14 rounded-2xl gradient-sunrise flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
