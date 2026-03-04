@@ -35,7 +35,7 @@ const FAQSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="faq" className="section-padding gradient-sunrise-soft" ref={ref}>
+    <section id="faq" className="section-padding relative" ref={ref}>
       <div className="max-w-3xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -43,10 +43,10 @@ const FAQSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <span className="text-sm font-semibold text-secondary uppercase tracking-widest mb-4 block">
+          <span className="text-sm font-semibold text-secondary uppercase tracking-widest mb-4 block neon-glow-text-subtle">
             Got Questions?
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-foreground">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-foreground neon-glow-text-subtle">
             Frequently Asked Questions
           </h2>
         </motion.div>
@@ -61,11 +61,11 @@ const FAQSection = () => {
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="glass-card px-6 border-none"
+                className="neon-card px-6 border-none"
               >
                 <AccordionTrigger className="text-left font-heading font-semibold text-foreground hover:no-underline py-5 gap-4">
                   <div className="flex items-center gap-4">
-                    <span className="text-sm font-heading font-bold text-primary/40 flex-shrink-0">
+                    <span className="text-sm font-heading font-bold text-primary/50 flex-shrink-0">
                       {String(index + 1).padStart(2, "0")}
                     </span>
                     <span>{faq.question}</span>

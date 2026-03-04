@@ -50,7 +50,7 @@ const CountdownTimer = () => {
           key={unit.label}
           className="gradient-border min-w-[72px] sm:min-w-[85px]"
         >
-          <div className="bg-foreground/70 backdrop-blur-md rounded-2xl px-3 sm:px-5 py-4 text-center border border-primary-foreground/20">
+          <div className="bg-card/80 backdrop-blur-md rounded-2xl px-3 sm:px-5 py-4 text-center neon-border">
             <AnimatePresence mode="popLayout">
               <motion.div
                 key={unit.value}
@@ -58,12 +58,12 @@ const CountdownTimer = () => {
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: 10, opacity: 0 }}
                 transition={{ duration: 0.3 }}
-                className="text-2xl sm:text-4xl font-heading font-bold text-primary-foreground"
+                className="text-2xl sm:text-4xl font-heading font-bold text-foreground"
               >
                 {String(unit.value).padStart(2, "0")}
               </motion.div>
             </AnimatePresence>
-            <div className="text-[10px] sm:text-xs text-primary-foreground/70 mt-1.5 font-semibold uppercase tracking-widest">
+            <div className="text-[10px] sm:text-xs text-muted-foreground mt-1.5 font-semibold uppercase tracking-widest">
               {unit.label}
             </div>
           </div>
