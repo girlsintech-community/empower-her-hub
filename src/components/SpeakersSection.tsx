@@ -54,7 +54,7 @@ const SpeakersSection = () => {
           </h3>
         </motion.div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8">
           {pastSpeakers.map((speaker, index) => (
             <motion.div
               key={speaker.name}
@@ -63,12 +63,14 @@ const SpeakersSection = () => {
               transition={{ duration: 0.4, delay: 0.1 * index }}
               className="text-center group"
             >
-              <div className="w-24 h-24 sm:w-28 sm:h-28 mx-auto mb-4 rounded-full overflow-hidden border-3 border-primary/20 group-hover:border-primary/60 transition-colors duration-300 glow-shadow">
-                <img
-                  src={speaker.image}
-                  alt={speaker.name}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                />
+              <div className="mx-auto mb-4 w-28 h-28 sm:w-32 sm:h-32 gradient-ring group-hover:shadow-lg transition-shadow duration-300">
+                <div className="w-full h-full rounded-full overflow-hidden bg-card">
+                  <img
+                    src={speaker.image}
+                    alt={speaker.name}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                </div>
               </div>
               <h4 className="font-heading font-bold text-sm text-foreground mb-1">{speaker.name}</h4>
               <p className="text-xs text-muted-foreground">{speaker.title}</p>

@@ -63,10 +63,15 @@ const FAQSection = () => {
                 value={`item-${index}`}
                 className="glass-card px-6 border-none"
               >
-                <AccordionTrigger className="text-left font-heading font-semibold text-foreground hover:no-underline py-5">
-                  {faq.question}
+                <AccordionTrigger className="text-left font-heading font-semibold text-foreground hover:no-underline py-5 gap-4">
+                  <div className="flex items-center gap-4">
+                    <span className="text-sm font-heading font-bold text-primary/40 flex-shrink-0">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <span>{faq.question}</span>
+                  </div>
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground pb-5 leading-relaxed">
+                <AccordionContent className="text-muted-foreground pb-5 pl-10 leading-relaxed">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
