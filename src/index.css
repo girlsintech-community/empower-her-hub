@@ -36,10 +36,10 @@
 
     --radius: 1rem;
 
-    --sunrise-start: 340 80% 65%;
-    --sunrise-mid: 25 90% 60%;
-    --sunrise-end: 42 95% 58%;
-    --sunrise-glow: 45 100% 75%;
+    --sunrise-start: 340 85% 55%;
+    --sunrise-mid: 25 95% 52%;
+    --sunrise-end: 42 100% 50%;
+    --sunrise-glow: 45 100% 65%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
