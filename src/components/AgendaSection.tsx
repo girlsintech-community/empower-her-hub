@@ -1,48 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Compass, Crown, Mic2, Network } from "lucide-react";
-
-const tracks = [
-  {
-    icon: Compass,
-    name: "Track 1 – Career Clarity",
-    color: "from-sunrise-pink to-sunrise-orange",
-    sessions: [
-      { time: "10:00 AM", title: "Finding Your Path in Tech", format: "30 min + 10 min Q&A" },
-      { time: "10:45 AM", title: "Building a Standout Portfolio", format: "30 min + 10 min Q&A" },
-      { time: "11:30 AM", title: "Internship Roadmap 2025", format: "30 min + 10 min Q&A" },
-    ],
-  },
-  {
-    icon: Crown,
-    name: "Track 2 – Confidence & Leadership",
-    color: "from-sunrise-orange to-sunrise-gold",
-    sessions: [
-      { time: "12:30 PM", title: "Overcoming Impostor Syndrome", format: "30 min + 10 min Q&A" },
-      { time: "1:15 PM", title: "Public Speaking for Tech Women", format: "30 min + 10 min Q&A" },
-      { time: "2:00 PM", title: "Leading Without a Title", format: "30 min + 10 min Q&A" },
-    ],
-  },
-  {
-    icon: Mic2,
-    name: "Track 3 – Real Stories",
-    color: "from-sunrise-gold to-sunrise-glow",
-    sessions: [
-      { time: "3:00 PM", title: "My Journey: From College to Tech Leadership", format: "30 min + 10 min Q&A" },
-      { time: "3:45 PM", title: "Breaking Barriers: Women in STEM", format: "30 min + 10 min Q&A" },
-    ],
-  },
-  {
-    icon: Network,
-    name: "Track 4 – Networking Rooms",
-    color: "from-sunrise-pink to-sunrise-gold",
-    sessions: [
-      { time: "4:30 PM", title: "Speed Networking – Round 1", format: "30 min" },
-      { time: "5:15 PM", title: "Speed Networking – Round 2", format: "30 min" },
-      { time: "6:00 PM", title: "Open Mixer & Closing", format: "30 min" },
-    ],
-  },
-];
+import { Sparkles, Lock } from "lucide-react";
 
 const AgendaSection = () => {
   const ref = useRef(null);
@@ -55,7 +13,7 @@ const AgendaSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
           <span className="text-sm font-semibold text-secondary uppercase tracking-widest mb-4 block">
             Event Schedule
@@ -65,52 +23,49 @@ const AgendaSection = () => {
           </h2>
         </motion.div>
 
-        <div className="space-y-8">
-          {tracks.map((track, trackIndex) => (
+        {/* Coming Soon Card */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={isInView ? { opacity: 1, scale: 1 } : {}}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="glass-card gradient-top-bar p-10 sm:p-16 text-center relative overflow-hidden"
+        >
+          {/* Decorative background */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <motion.div
-              key={track.name}
-              initial={{ opacity: 0, x: trackIndex % 2 === 0 ? -30 : 30 }}
-              animate={isInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.15 * trackIndex }}
-              className="glass-card gradient-top-bar p-6 sm:p-8 overflow-hidden"
+              animate={{ rotate: [0, 360] }}
+              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+              className="absolute -top-20 -right-20 w-40 h-40 rounded-full border border-primary/10"
+            />
+            <motion.div
+              animate={{ rotate: [360, 0] }}
+              transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+              className="absolute -bottom-16 -left-16 w-32 h-32 rounded-full border border-accent/10"
+            />
+          </div>
+
+          <div className="relative z-10">
+            <motion.div
+              animate={{ y: [-5, 5, -5] }}
+              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+              className="w-20 h-20 rounded-2xl gradient-sunrise flex items-center justify-center mx-auto mb-8"
             >
-              <div className="flex items-center gap-3 mb-6">
-                <div className={`w-10 h-10 rounded-xl bg-gradient-to-r ${track.color} flex items-center justify-center`}>
-                  <track.icon className="w-5 h-5 text-primary-foreground" />
-                </div>
-                <h3 className="text-lg sm:text-xl font-heading font-bold text-foreground">
-                  {track.name}
-                </h3>
-              </div>
-
-              {/* Timeline */}
-              <div className="relative ml-5">
-                {/* Vertical line */}
-                <div className="absolute left-0 top-2 bottom-2 w-px bg-gradient-to-b from-primary/40 via-secondary/30 to-accent/20" />
-
-                <div className="space-y-5">
-                  {track.sessions.map((session, i) => (
-                    <div
-                      key={i}
-                      className="relative flex items-start gap-5 pl-6 group cursor-default"
-                    >
-                      {/* Timeline dot */}
-                      <div className="absolute left-0 top-1.5 -translate-x-1/2 w-3 h-3 rounded-full border-2 border-primary bg-card group-hover:bg-primary group-hover:scale-125 transition-all duration-300" />
-
-                      <span className="text-sm font-mono font-semibold text-secondary whitespace-nowrap pt-0.5 min-w-[80px]">
-                        {session.time}
-                      </span>
-                      <div className="group-hover:translate-x-1 transition-transform duration-200">
-                        <p className="font-semibold text-foreground">{session.title}</p>
-                        <p className="text-xs text-muted-foreground mt-0.5">{session.format}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
+              <Lock className="w-10 h-10 text-primary-foreground" />
             </motion.div>
-          ))}
-        </div>
+
+            <h3 className="text-2xl sm:text-3xl font-heading font-bold text-foreground mb-4">
+              Something Exciting is Brewing ✨
+            </h3>
+            <p className="text-muted-foreground text-lg max-w-lg mx-auto mb-8 leading-relaxed">
+              We're curating an incredible lineup of sessions, workshops, and surprises behind the scenes. The full agenda will be revealed soon!
+            </p>
+
+            <div className="inline-flex items-center gap-2 bg-primary/10 rounded-full px-6 py-3">
+              <Sparkles className="w-4 h-4 text-primary" />
+              <span className="text-sm font-semibold text-primary">Stay tuned for the big reveal</span>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

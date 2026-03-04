@@ -45,12 +45,12 @@ const CountdownTimer = () => {
 
   return (
     <div className="flex gap-3 sm:gap-4">
-      {units.map((unit, i) => (
+      {units.map((unit) => (
         <div
           key={unit.label}
           className="gradient-border min-w-[72px] sm:min-w-[85px]"
         >
-          <div className="bg-card/15 backdrop-blur-md rounded-2xl px-3 sm:px-5 py-4 text-center border border-primary-foreground/10">
+          <div className="bg-foreground/70 backdrop-blur-md rounded-2xl px-3 sm:px-5 py-4 text-center border border-primary-foreground/20">
             <AnimatePresence mode="popLayout">
               <motion.div
                 key={unit.value}
@@ -63,7 +63,7 @@ const CountdownTimer = () => {
                 {String(unit.value).padStart(2, "0")}
               </motion.div>
             </AnimatePresence>
-            <div className="text-[10px] sm:text-xs text-primary-foreground/60 mt-1.5 font-semibold uppercase tracking-widest">
+            <div className="text-[10px] sm:text-xs text-primary-foreground/70 mt-1.5 font-semibold uppercase tracking-widest">
               {unit.label}
             </div>
           </div>
