@@ -279,25 +279,7 @@
                 0 0 40px 5px hsla(25, 100%, 55%, 0.2);
   }
 
-  /* Pulse ring animation for CTA */
-  .pulse-ring {
-    position: relative;
-  }
-
-  .pulse-ring::after {
-    content: '';
-    position: absolute;
-    inset: -4px;
-    border-radius: inherit;
-    border: 2px solid hsla(340, 90%, 55%, 0.5);
-    box-shadow: 0 0 15px hsla(340, 90%, 55%, 0.3);
-    animation: pulse-ring-anim 2s ease-in-out infinite;
-  }
-
-  @keyframes pulse-ring-anim {
-    0%, 100% { transform: scale(1); opacity: 0.5; }
-    50% { transform: scale(1.08); opacity: 0; }
-  }
+  /* Pulse ring animation removed — caused visual glitch */
 
   /* Neon glow button */
   .neon-glow-btn {

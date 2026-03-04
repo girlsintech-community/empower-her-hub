@@ -14,15 +14,13 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
       <HeroSection />
-      <SectionDivider variant="torn" />
+      <SectionDivider />
       <AboutSection />
-      <SectionDivider variant="jagged" />
       <FeaturesSection />
-      <SectionDivider variant="torn" />
+      <SectionDivider />
       <AgendaSection />
-      <SectionDivider variant="jagged" />
       <SpeakersSection />
-      <SectionDivider variant="torn" />
+      <SectionDivider />
       <FAQSection />
       <FinalCTASection />
       <Footer />

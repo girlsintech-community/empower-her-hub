@@ -18,7 +18,6 @@ const HeroSection = () => {
 
   return (
     <section ref={ref} className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Parallax Background */}
       <motion.div
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url(${heroBg})`, y: bgY }}
@@ -26,7 +25,6 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-background/70" />
       </motion.div>
 
-      {/* Floating decorative elements with neon glow */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
           animate={{ y: [-20, 20, -20], x: [-10, 10, -10] }}
@@ -48,8 +46,7 @@ const HeroSection = () => {
         />
       </div>
 
-      {/* Content */}
-      <motion.div style={{ opacity: contentOpacity }} className="relative z-10 max-w-5xl mx-auto text-center section-padding">
+      <motion.div style={{ opacity: contentOpacity }} className="relative z-10 max-w-5xl mx-auto text-center section-padding pt-28 sm:pt-32">
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -72,7 +69,6 @@ const HeroSection = () => {
           A one-day virtual conference designed to help girls in tech gain clarity, confidence, and career direction.
         </motion.p>
 
-        {/* Event Details */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -93,7 +89,6 @@ const HeroSection = () => {
           ))}
         </motion.div>
 
-        {/* Countdown */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -103,21 +98,17 @@ const HeroSection = () => {
           <CountdownTimer />
         </motion.div>
 
-        {/* CTAs */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+          className="flex justify-center"
         >
           <a href={REGISTER_URL} target="_blank" rel="noopener noreferrer">
-            <Button variant="hero" size="xl" className="pulse-ring neon-glow-btn">
+            <Button variant="hero" size="xl" className="neon-glow-btn">
               Reserve My Spot
             </Button>
           </a>
-          <Button variant="hero-outline" size="xl" onClick={() => document.getElementById('agenda')?.scrollIntoView({ behavior: 'smooth' })}>
-            View Agenda
-          </Button>
         </motion.div>
       </motion.div>
     </section>
