@@ -72,7 +72,7 @@ const AgendaSection = () => {
               initial={{ opacity: 0, x: trackIndex % 2 === 0 ? -30 : 30 }}
               animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.15 * trackIndex }}
-              className="glass-card p-6 sm:p-8 overflow-hidden"
+              className="glass-card gradient-top-bar p-6 sm:p-8 overflow-hidden"
             >
               <div className="flex items-center gap-3 mb-6">
                 <div className={`w-10 h-10 rounded-xl bg-gradient-to-r ${track.color} flex items-center justify-center`}>
@@ -83,21 +83,30 @@ const AgendaSection = () => {
                 </h3>
               </div>
 
-              <div className="space-y-4">
-                {track.sessions.map((session, i) => (
-                  <div
-                    key={i}
-                    className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6 pl-4 border-l-2 border-primary/20 hover:border-primary/60 transition-colors"
-                  >
-                    <span className="text-sm font-mono font-semibold text-secondary whitespace-nowrap">
-                      {session.time}
-                    </span>
-                    <div>
-                      <p className="font-semibold text-foreground">{session.title}</p>
-                      <p className="text-xs text-muted-foreground">{session.format}</p>
+              {/* Timeline */}
+              <div className="relative ml-5">
+                {/* Vertical line */}
+                <div className="absolute left-0 top-2 bottom-2 w-px bg-gradient-to-b from-primary/40 via-secondary/30 to-accent/20" />
+
+                <div className="space-y-5">
+                  {track.sessions.map((session, i) => (
+                    <div
+                      key={i}
+                      className="relative flex items-start gap-5 pl-6 group cursor-default"
+                    >
+                      {/* Timeline dot */}
+                      <div className="absolute left-0 top-1.5 -translate-x-1/2 w-3 h-3 rounded-full border-2 border-primary bg-card group-hover:bg-primary group-hover:scale-125 transition-all duration-300" />
+
+                      <span className="text-sm font-mono font-semibold text-secondary whitespace-nowrap pt-0.5 min-w-[80px]">
+                        {session.time}
+                      </span>
+                      <div className="group-hover:translate-x-1 transition-transform duration-200">
+                        <p className="font-semibold text-foreground">{session.title}</p>
+                        <p className="text-xs text-muted-foreground mt-0.5">{session.format}</p>
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </motion.div>
           ))}

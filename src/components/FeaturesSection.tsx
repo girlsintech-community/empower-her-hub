@@ -50,20 +50,29 @@ const FeaturesSection = () => {
           {features.map((feature, index) => (
             <motion.div
               key={feature.title}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.1 * index }}
-              className="glass-card p-8 hover:glow-shadow transition-all duration-300 group"
+              initial={{ opacity: 0, y: 30, scale: 0.97 }}
+              animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
+              transition={{ duration: 0.5, delay: 0.12 * index }}
+              className="glass-card gradient-top-bar p-8 hover:glow-shadow-hover hover:-translate-y-1 transition-all duration-300 group"
             >
-              <div className="w-14 h-14 rounded-2xl gradient-sunrise flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
-                <feature.icon className="w-7 h-7 text-primary-foreground" />
+              <div className="flex items-start gap-5">
+                <div className="flex-shrink-0">
+                  <span className="text-xs font-heading font-bold text-muted-foreground/40 block mb-2">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <div className="w-14 h-14 rounded-2xl gradient-sunrise flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <feature.icon className="w-7 h-7 text-primary-foreground" />
+                  </div>
+                </div>
+                <div className="pt-6">
+                  <h3 className="text-xl font-heading font-bold text-foreground mb-3">
+                    {feature.title}
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {feature.description}
+                  </p>
+                </div>
               </div>
-              <h3 className="text-xl font-heading font-bold text-foreground mb-3">
-                {feature.title}
-              </h3>
-              <p className="text-muted-foreground leading-relaxed">
-                {feature.description}
-              </p>
             </motion.div>
           ))}
         </div>

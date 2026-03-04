@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface TimeLeft {
   days: number;
@@ -38,19 +39,33 @@ const CountdownTimer = () => {
   const units = [
     { label: "Days", value: timeLeft.days },
     { label: "Hours", value: timeLeft.hours },
-    { label: "Minutes", value: timeLeft.minutes },
-    { label: "Seconds", value: timeLeft.seconds },
+    { label: "Min", value: timeLeft.minutes },
+    { label: "Sec", value: timeLeft.seconds },
   ];
 
   return (
     <div className="flex gap-3 sm:gap-4">
-      {units.map((unit) => (
-        <div key={unit.label} className="glass-card px-3 sm:px-5 py-3 text-center min-w-[70px]">
-          <div className="text-2xl sm:text-3xl font-heading font-bold gradient-text">
-            {String(unit.value).padStart(2, "0")}
-          </div>
-          <div className="text-xs text-muted-foreground mt-1 font-medium uppercase tracking-wider">
-            {unit.label}
+      {units.map((unit, i) => (
+        <div
+          key={unit.label}
+          className="gradient-border min-w-[72px] sm:min-w-[85px]"
+        >
+          <div className="bg-card/15 backdrop-blur-md rounded-2xl px-3 sm:px-5 py-4 text-center border border-primary-foreground/10">
+            <AnimatePresence mode="popLayout">
+              <motion.div
+                key={unit.value}
+                initial={{ y: -10, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: 10, opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                className="text-2xl sm:text-4xl font-heading font-bold text-primary-foreground"
+              >
+                {String(unit.value).padStart(2, "0")}
+              </motion.div>
+            </AnimatePresence>
+            <div className="text-[10px] sm:text-xs text-primary-foreground/60 mt-1.5 font-semibold uppercase tracking-widest">
+              {unit.label}
+            </div>
           </div>
         </div>
       ))}
