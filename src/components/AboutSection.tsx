@@ -6,9 +6,9 @@ const AboutSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="about" className="section-padding gradient-sunrise-soft relative" ref={ref}>
+    <section id="about" className="section-padding relative" ref={ref}>
       {/* Dot pattern background */}
-      <div className="absolute inset-0 opacity-[0.03]" style={{
+      <div className="absolute inset-0 opacity-[0.04]" style={{
         backgroundImage: 'radial-gradient(circle, hsl(var(--foreground)) 1px, transparent 1px)',
         backgroundSize: '24px 24px',
       }} />
@@ -20,10 +20,10 @@ const AboutSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <span className="text-sm font-semibold text-secondary uppercase tracking-widest mb-4 block">
+          <span className="text-sm font-semibold text-secondary uppercase tracking-widest mb-4 block neon-glow-text-subtle">
             About the Conference
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-foreground mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-foreground mb-6 neon-glow-text-subtle">
             Why Empower Her 2.0?
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto text-balance leading-relaxed">

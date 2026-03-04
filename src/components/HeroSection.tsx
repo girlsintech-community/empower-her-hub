@@ -23,25 +23,28 @@ const HeroSection = () => {
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url(${heroBg})`, y: bgY }}
       >
-        <div className="absolute inset-0 bg-foreground/55" />
+        <div className="absolute inset-0 bg-background/70" />
       </motion.div>
 
-      {/* Floating decorative elements */}
+      {/* Floating decorative elements with neon glow */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
           animate={{ y: [-20, 20, -20], x: [-10, 10, -10] }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-1/4 left-[10%] w-64 h-64 rounded-full bg-gradient-to-br from-primary/30 to-accent/20 blur-3xl"
+          className="absolute top-1/4 left-[10%] w-72 h-72 rounded-full blur-3xl"
+          style={{ background: 'radial-gradient(circle, hsla(340, 90%, 55%, 0.35), transparent)' }}
         />
         <motion.div
           animate={{ y: [15, -15, 15], x: [10, -10, 10] }}
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute bottom-1/4 right-[10%] w-80 h-80 rounded-full bg-gradient-to-tl from-secondary/25 to-primary/15 blur-3xl"
+          className="absolute bottom-1/4 right-[10%] w-80 h-80 rounded-full blur-3xl"
+          style={{ background: 'radial-gradient(circle, hsla(25, 100%, 55%, 0.3), transparent)' }}
         />
         <motion.div
           animate={{ y: [10, -20, 10] }}
           transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full bg-gradient-to-r from-accent/15 to-transparent blur-3xl"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full blur-3xl"
+          style={{ background: 'radial-gradient(circle, hsla(42, 100%, 52%, 0.2), transparent)' }}
         />
       </div>
 
@@ -51,7 +54,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.15 }}
-          className="text-4xl sm:text-6xl md:text-7xl font-heading font-bold text-primary-foreground mb-6 text-balance leading-[1.1]"
+          className="text-4xl sm:text-6xl md:text-7xl font-heading font-bold text-primary-foreground mb-6 text-balance leading-[1.1] neon-glow-text"
         >
           Empower Her 2.0
           <br />
@@ -82,7 +85,7 @@ const HeroSection = () => {
             { icon: Users, text: "Free Entry" },
           ].map(({ icon: Icon, text }) => (
             <div key={text} className="flex items-center gap-2.5 text-sm sm:text-base font-medium">
-              <div className="w-8 h-8 rounded-full bg-primary-foreground/10 backdrop-blur-sm flex items-center justify-center">
+              <div className="w-8 h-8 rounded-full bg-primary-foreground/10 backdrop-blur-sm flex items-center justify-center border border-primary-foreground/20">
                 <Icon className="w-4 h-4" />
               </div>
               <span>{text}</span>
@@ -108,7 +111,7 @@ const HeroSection = () => {
           className="flex flex-col sm:flex-row gap-4 justify-center items-center"
         >
           <a href={REGISTER_URL} target="_blank" rel="noopener noreferrer">
-            <Button variant="hero" size="xl" className="pulse-ring">
+            <Button variant="hero" size="xl" className="pulse-ring neon-glow-btn">
               Reserve My Spot
             </Button>
           </a>

@@ -29,13 +29,13 @@ const SpeakersSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <span className="text-sm font-semibold text-secondary uppercase tracking-widest mb-4 block">
+          <span className="text-sm font-semibold text-secondary uppercase tracking-widest mb-4 block neon-glow-text-subtle">
             Learn from the Best
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-foreground mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-foreground mb-6 neon-glow-text-subtle">
             Meet Our Speakers
           </h2>
-          <div className="inline-flex items-center gap-2 gradient-sunrise rounded-full px-6 py-2 mb-4">
+          <div className="inline-flex items-center gap-2 gradient-sunrise rounded-full px-6 py-2 mb-4 neon-glow-btn">
             <span className="text-sm font-bold text-primary-foreground">
               ✨ Speakers for Empower Her 2.0 will be announced soon
             </span>
@@ -63,7 +63,7 @@ const SpeakersSection = () => {
               transition={{ duration: 0.4, delay: 0.1 * index }}
               className="text-center group"
             >
-              <div className="mx-auto mb-4 w-28 h-28 sm:w-32 sm:h-32 gradient-ring group-hover:shadow-lg transition-shadow duration-300">
+              <div className="mx-auto mb-4 w-28 h-28 sm:w-32 sm:h-32 gradient-ring transition-shadow duration-300">
                 <div className="w-full h-full rounded-full overflow-hidden bg-card">
                   <img
                     src={speaker.image}
@@ -85,7 +85,7 @@ const SpeakersSection = () => {
           transition={{ duration: 0.5, delay: 0.6 }}
           className="text-center mt-10"
         >
-          <Badge variant="outline" className="text-sm px-5 py-2 border-primary/30 text-primary font-semibold">
+          <Badge variant="outline" className="text-sm px-5 py-2 neon-border text-primary font-semibold">
             🔔 More Announcements Coming Soon
           </Badge>
         </motion.div>

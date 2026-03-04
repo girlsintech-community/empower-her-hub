@@ -55,7 +55,9 @@ const Navbar = () => {
               }`}
             >
               {link.label}
-              <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-primary to-accent scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-full" />
+              <span className="absolute -bottom-1 left-0 w-full h-0.5 rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
+                style={{ background: 'linear-gradient(90deg, hsl(340, 90%, 55%), hsl(42, 100%, 52%))', boxShadow: '0 0 8px hsla(340, 90%, 55%, 0.5)' }}
+              />
             </a>
           ))}
 
@@ -69,7 +71,7 @@ const Navbar = () => {
           </button>
 
           <a href={REGISTER_URL} target="_blank" rel="noopener noreferrer">
-            <Button variant="hero" size="sm" className="rounded-full shimmer-btn relative overflow-hidden">
+            <Button variant="hero" size="sm" className="rounded-full neon-glow-btn relative overflow-hidden">
               <span className="relative z-10">Register Now</span>
             </Button>
           </a>
@@ -118,7 +120,7 @@ const Navbar = () => {
                 </motion.a>
               ))}
               <a href={REGISTER_URL} target="_blank" rel="noopener noreferrer" className="block mt-3">
-                <Button variant="hero" size="sm" className="w-full rounded-full">
+                <Button variant="hero" size="sm" className="w-full rounded-full neon-glow-btn">
                   Register Now
                 </Button>
               </a>

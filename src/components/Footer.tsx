@@ -5,7 +5,6 @@ const footerLinks = [
   { label: "Agenda", href: "#agenda" },
   { label: "Speakers", href: "#speakers" },
   { label: "FAQ", href: "#faq" },
-  { label: "Empower Her 1.0 Recap", href: "https://empowerher.girlsleadingtech.com/", external: true },
 ];
 
 const socialLinks = [
@@ -16,8 +15,11 @@ const socialLinks = [
 
 const Footer = () => {
   return (
-    <footer className="relative bg-foreground/5 border-t border-border">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+    <footer className="relative border-t border-border">
+      {/* Neon gradient top line */}
+      <div className="absolute top-0 left-0 right-0 h-px"
+        style={{ background: 'linear-gradient(90deg, transparent, hsl(340, 90%, 55%), hsl(25, 100%, 55%), hsl(42, 100%, 52%), transparent)', boxShadow: '0 0 15px hsla(340, 90%, 55%, 0.4)' }}
+      />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
@@ -41,7 +43,6 @@ const Footer = () => {
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                     className="text-sm text-muted-foreground hover:text-primary transition-colors"
                   >
                     {link.label}
@@ -69,7 +70,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:text-primary-foreground hover:gradient-sunrise transition-all duration-300"
+                  className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:text-primary-foreground hover:gradient-sunrise neon-icon-hover transition-all duration-300"
                 >
                   <social.icon className="w-5 h-5" />
                 </a>
