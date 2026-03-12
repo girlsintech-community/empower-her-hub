@@ -41,7 +41,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="text-lg sm:text-xl text-foreground/80 max-w-2xl mx-auto mb-10 text-balance leading-relaxed drop-shadow-sm"
+          className="text-lg sm:text-xl text-foreground/80 max-w-2xl mx-auto mb-10 text-balance leading-relaxed"
         >
           A one-day virtual conference designed to help girls in tech gain clarity, confidence, and career direction.
         </motion.p>
