@@ -36,15 +36,6 @@
 
     --radius: 1rem;
 
-    --sunrise-start: 340 90% 55%;
-    --sunrise-mid: 25 100% 55%;
-    --sunrise-end: 42 100% 52%;
-    --sunrise-glow: 45 100% 65%;
-
-    --neon-pink: 340 90% 60%;
-    --neon-orange: 25 100% 58%;
-    --neon-gold: 42 100% 55%;
-
     --sidebar-background: 220 20% 8%;
     --sidebar-foreground: 240 5.3% 90%;
     --sidebar-primary: 340 90% 55%;
@@ -114,15 +105,6 @@
     );
   }
 
-  .gradient-sunrise-soft {
-    background: linear-gradient(
-      135deg,
-      hsla(340, 90%, 55%, 0.06) 0%,
-      hsla(25, 100%, 55%, 0.04) 50%,
-      hsla(42, 100%, 52%, 0.06) 100%
-    );
-  }
-
   .gradient-text {
     background: linear-gradient(
       135deg,
@@ -135,70 +117,8 @@
     background-clip: text;
   }
 
-  .glass-card {
-    @apply bg-card/60 backdrop-blur-xl border border-border/40 rounded-2xl;
-    box-shadow: 0 0 30px -10px hsla(340, 90%, 55%, 0.1),
-                0 0 15px -5px hsla(25, 100%, 55%, 0.08);
-  }
-
-  .glass-card:hover {
-    box-shadow: 0 0 40px -8px hsla(340, 90%, 55%, 0.2),
-                0 0 20px -5px hsla(25, 100%, 55%, 0.15);
-  }
-
   .section-padding {
     @apply px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24;
-  }
-
-  .glow-shadow {
-    box-shadow: 0 0 30px -5px hsla(340, 90%, 55%, 0.3),
-                0 0 15px -3px hsla(25, 100%, 55%, 0.2);
-  }
-
-  .glow-shadow-hover {
-    box-shadow: 0 0 45px -5px hsla(340, 90%, 55%, 0.4),
-                0 0 25px -3px hsla(25, 100%, 55%, 0.3);
-  }
-
-  /* Neon glow text */
-  .neon-glow-text {
-    text-shadow: 0 0 10px hsla(340, 90%, 55%, 0.5),
-                 0 0 30px hsla(340, 90%, 55%, 0.3),
-                 0 0 60px hsla(25, 100%, 55%, 0.15);
-  }
-
-  .neon-glow-text-subtle {
-    text-shadow: 0 0 8px hsla(340, 90%, 55%, 0.3),
-                 0 0 20px hsla(25, 100%, 55%, 0.15);
-  }
-
-  /* Neon border glow */
-  .neon-border {
-    border: 1px solid hsla(340, 90%, 55%, 0.3);
-    box-shadow: 0 0 15px -3px hsla(340, 90%, 55%, 0.2),
-                inset 0 0 15px -5px hsla(340, 90%, 55%, 0.08);
-  }
-
-  .neon-border:hover {
-    border-color: hsla(340, 90%, 55%, 0.5);
-    box-shadow: 0 0 25px -3px hsla(340, 90%, 55%, 0.35),
-                0 0 10px -2px hsla(25, 100%, 55%, 0.2),
-                inset 0 0 20px -5px hsla(340, 90%, 55%, 0.12);
-  }
-
-  /* Neon card */
-  .neon-card {
-    @apply bg-card/50 backdrop-blur-xl rounded-2xl;
-    border: 1px solid hsla(340, 90%, 55%, 0.15);
-    box-shadow: 0 0 20px -5px hsla(340, 90%, 55%, 0.15),
-                0 0 40px -10px hsla(25, 100%, 55%, 0.08);
-    transition: all 0.3s ease;
-  }
-
-  .neon-card:hover {
-    border-color: hsla(340, 90%, 55%, 0.35);
-    box-shadow: 0 0 30px -5px hsla(340, 90%, 55%, 0.25),
-                0 0 60px -10px hsla(25, 100%, 55%, 0.15);
   }
 
   /* Shimmer text animation */
@@ -216,92 +136,6 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
     animation: shimmer 3s ease-in-out infinite;
-  }
-
-  /* Gradient border utility */
-  .gradient-border {
-    position: relative;
-    background: hsl(var(--card));
-    border-radius: 1rem;
-  }
-
-  .gradient-border::before {
-    content: '';
-    position: absolute;
-    inset: -1px;
-    border-radius: inherit;
-    background: linear-gradient(
-      135deg,
-      hsl(340, 90%, 55%) 0%,
-      hsl(25, 100%, 55%) 50%,
-      hsl(42, 100%, 52%) 100%
-    );
-    z-index: -1;
-  }
-
-  /* Top gradient accent bar for cards */
-  .gradient-top-bar {
-    position: relative;
-    overflow: hidden;
-  }
-
-  .gradient-top-bar::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(
-      90deg,
-      hsl(340, 90%, 55%) 0%,
-      hsl(25, 100%, 55%) 50%,
-      hsl(42, 100%, 52%) 100%
-    );
-    box-shadow: 0 0 15px 2px hsla(340, 90%, 55%, 0.4);
-  }
-
-  /* Gradient ring for speaker avatars */
-  .gradient-ring {
-    background: linear-gradient(
-      135deg,
-      hsl(340, 90%, 55%) 0%,
-      hsl(25, 100%, 55%) 50%,
-      hsl(42, 100%, 52%) 100%
-    );
-    padding: 3px;
-    border-radius: 9999px;
-    transition: box-shadow 0.3s ease;
-  }
-
-  .gradient-ring:hover {
-    box-shadow: 0 0 20px 3px hsla(340, 90%, 55%, 0.4),
-                0 0 40px 5px hsla(25, 100%, 55%, 0.2);
-  }
-
-  /* Pulse ring animation removed — caused visual glitch */
-
-  /* Neon glow button */
-  .neon-glow-btn {
-    box-shadow: 0 0 15px hsla(340, 90%, 55%, 0.4),
-                0 0 30px hsla(340, 90%, 55%, 0.2),
-                0 0 45px hsla(25, 100%, 55%, 0.1);
-    transition: box-shadow 0.3s ease;
-  }
-
-  .neon-glow-btn:hover {
-    box-shadow: 0 0 20px hsla(340, 90%, 55%, 0.5),
-                0 0 40px hsla(340, 90%, 55%, 0.3),
-                0 0 60px hsla(25, 100%, 55%, 0.15);
-  }
-
-  /* Neon icon hover */
-  .neon-icon-hover {
-    transition: all 0.3s ease;
-  }
-
-  .neon-icon-hover:hover {
-    filter: drop-shadow(0 0 8px hsla(340, 90%, 55%, 0.6));
   }
 }
 

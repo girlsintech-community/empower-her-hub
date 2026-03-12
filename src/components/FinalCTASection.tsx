@@ -14,28 +14,12 @@ const FinalCTASection = () => {
       <div className="absolute inset-0 gradient-sunrise opacity-90" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.25)_100%)]" />
 
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div
-          animate={{ y: [-15, 15, -15], x: [-8, 8, -8] }}
-          transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-[20%] left-[15%] w-40 h-40 rounded-full blur-2xl"
-          style={{ background: 'radial-gradient(circle, hsla(0, 0%, 100%, 0.15), transparent)' }}
-        />
-        <motion.div
-          animate={{ y: [10, -10, 10] }}
-          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute bottom-[20%] right-[15%] w-48 h-48 rounded-full blur-2xl"
-          style={{ background: 'radial-gradient(circle, hsla(0, 0%, 100%, 0.12), transparent)' }}
-        />
-      </div>
-
       <div className="relative z-10 max-w-3xl mx-auto text-center">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
           className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-primary-foreground mb-6 text-balance"
-          style={{ textShadow: '0 0 30px hsla(0, 0%, 100%, 0.3)' }}
         >
           Your Future in Tech Deserves a Room Like This.
         </motion.h2>
@@ -58,8 +42,7 @@ const FinalCTASection = () => {
           <a href={REGISTER_URL} target="_blank" rel="noopener noreferrer">
             <Button
               size="xl"
-              className="bg-card text-foreground font-bold rounded-full hover:bg-card/90 hover:scale-105 transition-all duration-300 text-lg px-12 pulse-ring"
-              style={{ boxShadow: '0 0 30px hsla(0, 0%, 100%, 0.3), 0 0 60px hsla(340, 90%, 55%, 0.2)' }}
+              className="bg-card text-foreground font-bold rounded-full hover:bg-card/90 hover:scale-105 transition-all duration-300 text-lg px-12"
             >
               Register Now
               <ArrowRight className="w-5 h-5 ml-2" />

@@ -48,7 +48,7 @@ const CountdownTimer = () => {
       {units.map((unit) => (
         <div
           key={unit.label}
-          className="min-w-[72px] sm:min-w-[85px] neon-card px-3 sm:px-5 py-4 text-center"
+          className="min-w-[72px] sm:min-w-[85px] bg-card/60 border border-border/40 rounded-2xl px-3 sm:px-5 py-4 text-center"
         >
           <AnimatePresence mode="popLayout">
             <motion.div
