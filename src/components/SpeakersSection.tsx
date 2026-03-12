@@ -10,6 +10,7 @@ import speakerMadhura from "@/assets/speaker-madhura.jpg";
 import speakerSu from "@/assets/speaker-su.jpg";
 import speakerJacintha from "@/assets/speaker-jacintha.jpg";
 import speakerYashaswini from "@/assets/speaker-yashaswini.jpg";
+import speakerBhavana from "@/assets/speaker-bhavana.jpg";
 
 const speakers = [
   {
