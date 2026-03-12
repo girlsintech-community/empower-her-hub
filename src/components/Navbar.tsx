@@ -1,8 +1,15 @@
 import { useState, useEffect } from "react";
-import { Moon, Sun } from "lucide-react";
+import { Moon, Sun, Menu, X } from "lucide-react";
+
+const navLinks = [
+  { label: "About", href: "#about" },
+  { label: "Speakers", href: "#speakers" },
+  { label: "Team", href: "#team" },
+];
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
   const [dark, setDark] = useState(() => !document.documentElement.classList.contains("light"));
 
   useEffect(() => {
@@ -32,14 +39,64 @@ const Navbar = () => {
           <span className="shimmer-text">Her</span>
         </a>
 
-        <button
-          onClick={toggleTheme}
-          className={`p-2 rounded-full transition-colors ${scrolled ? "text-muted-foreground hover:text-foreground" : "text-foreground/70 hover:text-foreground"}`}
-          aria-label="Toggle theme"
-        >
-          {dark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-        </button>
+        {/* Desktop nav links */}
+        <div className="hidden md:flex items-center gap-8">
+          {navLinks.map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
+              className={`text-sm font-medium transition-colors ${
+                scrolled
+                  ? "text-muted-foreground hover:text-foreground"
+                  : "text-foreground/70 hover:text-foreground"
+              }`}
+            >
+              {link.label}
+            </a>
+          ))}
+          <button
+            onClick={toggleTheme}
+            className={`p-2 rounded-full transition-colors ${scrolled ? "text-muted-foreground hover:text-foreground" : "text-foreground/70 hover:text-foreground"}`}
+            aria-label="Toggle theme"
+          >
+            {dark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+          </button>
+        </div>
+
+        {/* Mobile menu button */}
+        <div className="flex md:hidden items-center gap-2">
+          <button
+            onClick={toggleTheme}
+            className={`p-2 rounded-full transition-colors ${scrolled ? "text-muted-foreground hover:text-foreground" : "text-foreground/70 hover:text-foreground"}`}
+            aria-label="Toggle theme"
+          >
+            {dark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+          </button>
+          <button
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className={`p-2 rounded-full transition-colors ${scrolled ? "text-muted-foreground hover:text-foreground" : "text-foreground/70 hover:text-foreground"}`}
+            aria-label="Toggle menu"
+          >
+            {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
+        </div>
       </div>
+
+      {/* Mobile menu */}
+      {mobileOpen && (
+        <div className="md:hidden bg-card/95 backdrop-blur-xl border-b border-border/50 px-4 pb-4">
+          {navLinks.map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
+              onClick={() => setMobileOpen(false)}
+              className="block py-3 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+            >
+              {link.label}
+            </a>
+          ))}
+        </div>
+      )}
     </nav>
   );
 };
