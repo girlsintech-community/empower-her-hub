@@ -17,7 +17,6 @@ const Index = () => {
       <SectionDivider />
       <SpeakersSection />
       <SectionDivider />
-      <FinalCTASection />
       <Footer />
     </div>
   );
