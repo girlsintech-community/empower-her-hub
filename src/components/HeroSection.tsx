@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import { CalendarDays, MapPin, Users } from "lucide-react";
+import { CalendarDays, MapPin } from "lucide-react";
 import Aurora from "@/components/Aurora";
 
 const HeroSection = () => {
@@ -28,7 +28,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.15 }}
-          className="text-5xl sm:text-7xl md:text-8xl font-heading font-bold text-foreground mb-6 text-balance leading-[1.1] drop-shadow-lg"
+          className="text-5xl sm:text-7xl md:text-8xl font-heading font-bold text-foreground mb-6 text-balance leading-[1.1]"
         >
           Empower Her 2.0
           <br />
@@ -41,7 +41,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="text-lg sm:text-xl text-foreground/80 max-w-2xl mx-auto mb-10 text-balance leading-relaxed drop-shadow-sm"
+          className="text-lg sm:text-xl text-foreground/80 max-w-2xl mx-auto mb-10 text-balance leading-relaxed"
         >
           A one-day virtual conference designed to help girls in tech gain clarity, confidence, and career direction.
         </motion.p>
@@ -55,7 +55,6 @@ const HeroSection = () => {
           {[
             { icon: CalendarDays, text: "8 March 2026" },
             { icon: MapPin, text: "Virtual" },
-            { icon: Users, text: "Free Entry" },
           ].map(({ icon: Icon, text }) => (
             <div key={text} className="flex items-center gap-2.5 text-sm sm:text-base font-medium">
               <div className="w-8 h-8 rounded-full bg-foreground/10 backdrop-blur-sm flex items-center justify-center border border-foreground/20">

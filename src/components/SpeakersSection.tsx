@@ -99,7 +99,7 @@ const SpeakersSection = () => {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8 sm:gap-10">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 sm:gap-8">
           {speakers.map((speaker, index) => (
             <motion.div
               key={speaker.name}
