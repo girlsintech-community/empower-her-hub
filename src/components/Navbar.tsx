@@ -10,7 +10,6 @@ const navLinks = [
   { href: "#features", label: "Why Us" },
   { href: "#agenda", label: "Agenda" },
   { href: "#speakers", label: "Speakers" },
-  { href: "#faq", label: "FAQ" },
 ];
 
 const Navbar = () => {
