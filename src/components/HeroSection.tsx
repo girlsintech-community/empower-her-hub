@@ -28,11 +28,11 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.15 }}
-          className="text-4xl sm:text-6xl md:text-7xl font-heading font-bold text-foreground mb-6 text-balance leading-[1.1] drop-shadow-lg"
+          className="text-5xl sm:text-7xl md:text-8xl font-heading font-bold text-foreground mb-6 text-balance leading-[1.1] drop-shadow-lg"
         >
           Empower Her 2.0
           <br />
-          <span className="text-3xl sm:text-4xl md:text-5xl font-medium text-foreground/90">
+          <span className="text-3xl sm:text-5xl md:text-6xl font-medium text-foreground/90">
             From Potential to Power.
           </span>
         </motion.h1>

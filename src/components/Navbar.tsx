@@ -1,16 +1,8 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Moon, Sun } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
-
-const navLinks = [
-  { href: "#about", label: "About" },
-  { href: "#features", label: "Why Us" },
-  { href: "#speakers", label: "Speakers" },
-];
+import { Moon, Sun } from "lucide-react";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
   const [dark, setDark] = useState(() => !document.documentElement.classList.contains("light"));
 
   useEffect(() => {
@@ -40,72 +32,14 @@ const Navbar = () => {
           <span className="shimmer-text">Her</span>
         </a>
 
-        <div className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className={`text-sm font-medium transition-colors hover:text-primary ${
-                scrolled ? "text-muted-foreground" : "text-foreground/70"
-              }`}
-            >
-              {link.label}
-            </a>
-          ))}
-
-          <button
-            onClick={toggleTheme}
-            className={`p-2 rounded-full transition-colors ${scrolled ? "text-muted-foreground hover:text-foreground" : "text-foreground/70 hover:text-foreground"}`}
-            aria-label="Toggle theme"
-          >
-            {dark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-          </button>
-        </div>
-
-        <div className="flex md:hidden items-center gap-2">
-          <button
-            onClick={() => setMobileOpen(!mobileOpen)}
-            className={`p-2 ${scrolled ? "text-foreground" : "text-foreground"}`}
-          >
-            {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
-        </div>
+        <button
+          onClick={toggleTheme}
+          className={`p-2 rounded-full transition-colors ${scrolled ? "text-muted-foreground hover:text-foreground" : "text-foreground/70 hover:text-foreground"}`}
+          aria-label="Toggle theme"
+        >
+          {dark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+        </button>
       </div>
-
-      <AnimatePresence>
-        {mobileOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="md:hidden bg-card/95 backdrop-blur-xl border-t border-border/50 overflow-hidden"
-          >
-            <div className="p-4 space-y-1">
-              {navLinks.map((link, i) => (
-                <motion.a
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setMobileOpen(false)}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.05 * i }}
-                  className="block text-sm font-medium text-muted-foreground hover:text-primary py-3 px-3 rounded-lg hover:bg-primary/5 transition-all"
-                >
-                  {link.label}
-                </motion.a>
-              ))}
-              <button
-                onClick={() => { toggleTheme(); setMobileOpen(false); }}
-                className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-primary py-3 px-3 rounded-lg hover:bg-primary/5 transition-all w-full"
-              >
-                {dark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
-                {dark ? "Light Mode" : "Dark Mode"}
-              </button>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </nav>
   );
 };
