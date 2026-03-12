@@ -63,7 +63,10 @@ const RecordingsSection = () => {
                   </div>
                 </div>
               </div>
-            </motion.a>
+              <div className="p-3">
+                <h4 className="font-heading font-semibold text-sm text-foreground leading-tight mb-1">{video.title}</h4>
+                <p className="text-xs text-muted-foreground">{video.speaker}</p>
+              </div>
           ))}
         </div>
       </div>
