@@ -65,11 +65,6 @@ const Navbar = () => {
             {dark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
           </button>
 
-          <a href={REGISTER_URL} target="_blank" rel="noopener noreferrer">
-            <Button variant="hero" size="sm" className="rounded-full">
-              Register Now
-            </Button>
-          </a>
         </div>
 
         <div className="flex md:hidden items-center gap-2">
