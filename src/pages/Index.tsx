@@ -3,7 +3,6 @@ import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import SpeakersSection from "@/components/SpeakersSection";
-import FinalCTASection from "@/components/FinalCTASection";
 import Footer from "@/components/Footer";
 import SectionDivider from "@/components/SectionDivider";
 
@@ -18,7 +17,6 @@ const Index = () => {
       <SectionDivider />
       <SpeakersSection />
       <SectionDivider />
-      <FinalCTASection />
       <Footer />
     </div>
   );
