@@ -69,6 +69,13 @@ const speakers = [
     image: speakerYashaswini,
     linkedin: "https://www.linkedin.com/in/yash-vis/",
   },
+  {
+    name: "Bhavana Issar",
+    title: "Founder CEO",
+    company: "Caregiver Saathi",
+    image: speakerBhavana,
+    linkedin: "https://www.linkedin.com/in/bhavanaissar/",
+  },
 ];
 
 const SpeakersSection = () => {

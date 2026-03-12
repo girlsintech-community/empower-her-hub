@@ -32,7 +32,7 @@ const HeroSection = () => {
         >
           Empower Her 2.0
           <br />
-          <span className="text-3xl sm:text-4xl md:text-5xl font-medium text-foreground/90">
+          <span className="text-3xl sm:text-5xl md:text-6xl font-medium text-foreground/90">
             From Potential to Power.
           </span>
         </motion.h1>
