@@ -3,14 +3,14 @@ import { useRef } from "react";
 import { Play } from "lucide-react";
 
 const videos = [
-  { id: "olgVuJ79HbY", title: "Career in Tech", speaker: "Sobhitha Neelanath" },
-  { id: "zra81UZd6nA", title: "Building Your Personal Brand", speaker: "Bobbie Carlton" },
-  { id: "j_1Bqtf9FRA", title: "Enterprise Business Leadership", speaker: "Bhagyasrie M Masorkar" },
-  { id: "5236jNJXB4s", title: "People & Culture", speaker: "Chaitra Rao" },
-  { id: "QIJxhEO8WE4", title: "Aspiring for Change", speaker: "Madhura DasGupta Sinha" },
-  { id: "_DH-gVUPICM", title: "Executive Insights", speaker: "Su Jella" },
-  { id: "kKUN1YnvRSU", title: "Empowering 1 Million Girls", speaker: "Jacintha Jayachandran" },
-  { id: "h5tUFMQNrAQ", title: "AI & Technology", speaker: "Yashaswini Vismaya" },
+  { id: "olgVuJ79HbY", title: "Career Compass: Prepare & Practice", speaker: "Sobhitha Neelanath" },
+  { id: "zra81UZd6nA", title: "The Power of Public Speaking", speaker: "Bobbie Carlton" },
+  { id: "j_1Bqtf9FRA", title: "How Technology Students Can Stay Relevant in the AI Era", speaker: "Bhagyasrie M Masorkar" },
+  { id: "5236jNJXB4s", title: "Recruiters Insights - What Top Tech Firms Want", speaker: "Chaitra Rao" },
+  { id: "QIJxhEO8WE4", title: "Resilience and Courage - Writing Your Own Life Story", speaker: "Madhura DasGupta Sinha" },
+  { id: "_DH-gVUPICM", title: "The Rise of Women Leadership", speaker: "Su Jella" },
+  { id: "kKUN1YnvRSU", title: "Courage Above All", speaker: "Jacintha Jayachandran" },
+  { id: "h5tUFMQNrAQ", title: "Introduction to AI Careers", speaker: "Yashaswini Vismaya" },
   { id: "hTu4mLX3asc", title: "Caregiving & Leadership", speaker: "Bhavana Issar" },
 ];
 
