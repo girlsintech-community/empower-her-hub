@@ -1,9 +1,5 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
-
-const REGISTER_URL = "https://luma.com/vmnm3u4c";
 
 const FinalCTASection = () => {
   const ref = useRef(null);
@@ -21,34 +17,17 @@ const FinalCTASection = () => {
           transition={{ duration: 0.6 }}
           className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-primary-foreground mb-6 text-balance"
         >
-          Your Future in Tech Deserves a Room Like This.
+          Thank You for Being Part of Empower Her 2.0
         </motion.h2>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-lg sm:text-xl text-primary-foreground/85 mb-12 text-balance"
+          className="text-lg sm:text-xl text-primary-foreground/85 text-balance"
         >
-          Join ambitious girls across India for a powerful experience.
+          Stay connected for future events and opportunities.
         </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={isInView ? { opacity: 1, scale: 1 } : {}}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="flex flex-col items-center gap-5"
-        >
-          <a href={REGISTER_URL} target="_blank" rel="noopener noreferrer">
-            <Button
-              size="xl"
-              className="bg-card text-foreground font-bold rounded-full hover:bg-card/90 hover:scale-105 transition-all duration-300 text-lg px-12"
-            >
-              Register Now
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </Button>
-          </a>
-        </motion.div>
       </div>
     </section>
   );

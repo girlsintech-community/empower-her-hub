@@ -10,7 +10,6 @@ const navLinks = [
   { href: "#features", label: "Why Us" },
   { href: "#agenda", label: "Agenda" },
   { href: "#speakers", label: "Speakers" },
-  { href: "#faq", label: "FAQ" },
 ];
 
 const Navbar = () => {
@@ -28,6 +27,7 @@ const Navbar = () => {
     const next = !dark;
     setDark(next);
     document.documentElement.classList.toggle("dark", next);
+    document.documentElement.classList.toggle("light", !next);
   };
 
   return (
@@ -65,11 +65,6 @@ const Navbar = () => {
             {dark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
           </button>
 
-          <a href={REGISTER_URL} target="_blank" rel="noopener noreferrer">
-            <Button variant="hero" size="sm" className="rounded-full">
-              Register Now
-            </Button>
-          </a>
         </div>
 
         <div className="flex md:hidden items-center gap-2">
@@ -112,11 +107,6 @@ const Navbar = () => {
                   {link.label}
                 </motion.a>
               ))}
-              <a href={REGISTER_URL} target="_blank" rel="noopener noreferrer" className="block mt-3">
-                <Button variant="hero" size="sm" className="w-full rounded-full">
-                  Register Now
-                </Button>
-              </a>
             </div>
           </motion.div>
         )}
