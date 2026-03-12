@@ -18,12 +18,15 @@ const HeroSection = () => {
 
   return (
     <section ref={ref} className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <motion.div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(${heroBg})`, y: bgY }}
-      >
-        <div className="absolute inset-0 bg-background/70" />
-      </motion.div>
+      <div className="absolute inset-0">
+        <Aurora
+          colorStops={["#FF3366", "#FF6B2B", "#FFB347"]}
+          amplitude={1.2}
+          blend={0.6}
+          speed={0.8}
+        />
+        <div className="absolute inset-0 bg-background/60" />
+      </div>
 
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
