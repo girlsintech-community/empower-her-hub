@@ -13,7 +13,6 @@ const HeroSection = () => {
     target: ref,
     offset: ["start start", "end start"],
   });
-  const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
   const contentOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   return (
@@ -28,33 +27,12 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-background/60" />
       </div>
 
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div
-          animate={{ y: [-20, 20, -20], x: [-10, 10, -10] }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-1/4 left-[10%] w-72 h-72 rounded-full blur-3xl"
-          style={{ background: 'radial-gradient(circle, hsla(340, 90%, 55%, 0.35), transparent)' }}
-        />
-        <motion.div
-          animate={{ y: [15, -15, 15], x: [10, -10, 10] }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute bottom-1/4 right-[10%] w-80 h-80 rounded-full blur-3xl"
-          style={{ background: 'radial-gradient(circle, hsla(25, 100%, 55%, 0.3), transparent)' }}
-        />
-        <motion.div
-          animate={{ y: [10, -20, 10] }}
-          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full blur-3xl"
-          style={{ background: 'radial-gradient(circle, hsla(42, 100%, 52%, 0.2), transparent)' }}
-        />
-      </div>
-
       <motion.div style={{ opacity: contentOpacity }} className="relative z-10 max-w-5xl mx-auto text-center section-padding pt-28 sm:pt-32">
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.15 }}
-          className="text-4xl sm:text-6xl md:text-7xl font-heading font-bold text-primary-foreground mb-6 text-balance leading-[1.1] neon-glow-text"
+          className="text-4xl sm:text-6xl md:text-7xl font-heading font-bold text-primary-foreground mb-6 text-balance leading-[1.1]"
         >
           Empower Her 2.0
           <br />
@@ -108,7 +86,7 @@ const HeroSection = () => {
           className="flex justify-center"
         >
           <a href={REGISTER_URL} target="_blank" rel="noopener noreferrer">
-            <Button variant="hero" size="xl" className="neon-glow-btn">
+            <Button variant="hero" size="xl">
               Reserve My Spot
             </Button>
           </a>

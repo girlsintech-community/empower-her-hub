@@ -8,11 +8,7 @@ const socialLinks = [
 
 const Footer = () => {
   return (
-    <footer className="relative border-t border-border">
-      <div className="absolute top-0 left-0 right-0 h-px"
-        style={{ background: 'linear-gradient(90deg, transparent, hsl(340, 90%, 55%), hsl(25, 100%, 55%), hsl(42, 100%, 52%), transparent)', boxShadow: '0 0 15px hsla(340, 90%, 55%, 0.4)' }}
-      />
-
+    <footer className="border-t border-border">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="text-center md:text-left">
@@ -42,7 +38,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:text-primary-foreground hover:gradient-sunrise neon-icon-hover transition-all duration-300"
+                  className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all duration-300"
                 >
                   <social.icon className="w-5 h-5" />
                 </a>

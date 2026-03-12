@@ -30,23 +30,18 @@ const AboutSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="about" className="section-padding relative" ref={ref}>
-      <div className="absolute inset-0 opacity-[0.04]" style={{
-        backgroundImage: 'radial-gradient(circle, hsl(var(--foreground)) 1px, transparent 1px)',
-        backgroundSize: '24px 24px',
-      }} />
-
-      <div className="max-w-6xl mx-auto relative">
+    <section id="about" className="section-padding" ref={ref}>
+      <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <span className="text-sm font-semibold text-secondary uppercase tracking-widest mb-4 block neon-glow-text-subtle">
+          <span className="text-sm font-semibold text-secondary uppercase tracking-widest mb-4 block">
             About the Conference
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-foreground mb-6 neon-glow-text-subtle">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-foreground mb-6">
             Why Empower Her 2.0?
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto text-balance leading-relaxed">
@@ -61,11 +56,9 @@ const AboutSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.1 * index }}
-              className="neon-card p-6 text-center group hover:-translate-y-1 transition-all duration-300"
+              className="bg-card/60 border border-border/40 rounded-2xl p-6 text-center group hover:-translate-y-1 transition-all duration-300"
             >
-              <div className="w-12 h-12 rounded-xl gradient-sunrise flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300"
-                style={{ boxShadow: '0 0 20px hsla(340, 90%, 55%, 0.3)' }}
-              >
+              <div className="w-12 h-12 rounded-xl gradient-sunrise flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                 <value.icon className="w-6 h-6 text-primary-foreground" />
               </div>
               <h3 className="font-heading font-bold text-foreground mb-2">{value.title}</h3>

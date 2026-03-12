@@ -44,24 +44,19 @@ const Navbar = () => {
           <span className="shimmer-text">Her</span>
         </a>
 
-        {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className={`relative text-sm font-medium transition-colors hover:text-primary group ${
+              className={`text-sm font-medium transition-colors hover:text-primary ${
                 scrolled ? "text-muted-foreground" : "text-primary-foreground/80"
               }`}
             >
               {link.label}
-              <span className="absolute -bottom-1 left-0 w-full h-0.5 rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
-                style={{ background: 'linear-gradient(90deg, hsl(340, 90%, 55%), hsl(42, 100%, 52%))', boxShadow: '0 0 8px hsla(340, 90%, 55%, 0.5)' }}
-              />
             </a>
           ))}
 
-          {/* Theme toggle */}
           <button
             onClick={toggleTheme}
             className={`p-2 rounded-full transition-colors ${scrolled ? "text-muted-foreground hover:text-foreground" : "text-primary-foreground/70 hover:text-primary-foreground"}`}
@@ -71,13 +66,12 @@ const Navbar = () => {
           </button>
 
           <a href={REGISTER_URL} target="_blank" rel="noopener noreferrer">
-            <Button variant="hero" size="sm" className="rounded-full neon-glow-btn relative overflow-hidden">
-              <span className="relative z-10">Register Now</span>
+            <Button variant="hero" size="sm" className="rounded-full">
+              Register Now
             </Button>
           </a>
         </div>
 
-        {/* Mobile controls */}
         <div className="flex md:hidden items-center gap-2">
           <button
             onClick={toggleTheme}
@@ -95,7 +89,6 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile menu */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
@@ -120,7 +113,7 @@ const Navbar = () => {
                 </motion.a>
               ))}
               <a href={REGISTER_URL} target="_blank" rel="noopener noreferrer" className="block mt-3">
-                <Button variant="hero" size="sm" className="w-full rounded-full neon-glow-btn">
+                <Button variant="hero" size="sm" className="w-full rounded-full">
                   Register Now
                 </Button>
               </a>

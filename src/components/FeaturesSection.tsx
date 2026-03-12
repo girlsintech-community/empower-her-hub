@@ -38,10 +38,10 @@ const FeaturesSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-sm font-semibold text-secondary uppercase tracking-widest mb-4 block neon-glow-text-subtle">
+          <span className="text-sm font-semibold text-secondary uppercase tracking-widest mb-4 block">
             What Sets Us Apart
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-foreground neon-glow-text-subtle">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-foreground">
             What Makes This Different
           </h2>
         </motion.div>
@@ -53,16 +53,14 @@ const FeaturesSection = () => {
               initial={{ opacity: 0, y: 30, scale: 0.97 }}
               animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
               transition={{ duration: 0.5, delay: 0.12 * index }}
-              className="neon-card gradient-top-bar p-8 hover:-translate-y-1 transition-all duration-300 group"
+              className="bg-card/60 border border-border/40 rounded-2xl p-8 hover:-translate-y-1 transition-all duration-300 group"
             >
               <div className="flex items-start gap-5">
                 <div className="flex-shrink-0">
                   <span className="text-sm font-heading font-bold text-primary/60 block mb-2">
                     {String(index + 1).padStart(2, "0")}
                   </span>
-                  <div className="w-14 h-14 rounded-2xl gradient-sunrise flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
-                    style={{ boxShadow: '0 0 20px hsla(340, 90%, 55%, 0.3)' }}
-                  >
+                  <div className="w-14 h-14 rounded-2xl gradient-sunrise flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                     <feature.icon className="w-7 h-7 text-primary-foreground" />
                   </div>
                 </div>

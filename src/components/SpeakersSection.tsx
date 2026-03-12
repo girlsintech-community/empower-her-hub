@@ -1,19 +1,73 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Badge } from "@/components/ui/badge";
+import { Linkedin } from "lucide-react";
 
-import speakerNidhi from "@/assets/speaker-nidhi.jpg";
-import speakerShilpi from "@/assets/speaker-shilpi.jpg";
-import speakerRajini from "@/assets/speaker-rajini.jpg";
-import speakerMadhu from "@/assets/speaker-madhu.jpg";
-import speakerNaga from "@/assets/speaker-naga.jpg";
+import speakerSobhitha from "@/assets/speaker-sobhitha.jpg";
+import speakerBobbie from "@/assets/speaker-bobbie.jpg";
+import speakerBhagyasrie from "@/assets/speaker-bhagyasrie.jpg";
+import speakerChaitra from "@/assets/speaker-chaitra.jpg";
+import speakerMadhura from "@/assets/speaker-madhura.jpg";
+import speakerSu from "@/assets/speaker-su.jpg";
+import speakerJacintha from "@/assets/speaker-jacintha.jpg";
+import speakerYashaswini from "@/assets/speaker-yashaswini.jpg";
 
-const pastSpeakers = [
-  { name: "Nidhi Banthia Mehta", title: "Founder & CEO", company: "Self Achievers", image: speakerNidhi },
-  { name: "Shilpi Mitra", title: "Principal Software Engineering Manager", company: "Microsoft", image: speakerShilpi },
-  { name: "Rajini Ramesh", title: "Senior Principal Consultant", company: "Infosys", image: speakerRajini },
-  { name: "Madhu Sathvik", title: "Founder", company: "Satwa Yoga & Diet Centre", image: speakerMadhu },
-  { name: "Dr. Naga Swathi T.J", title: "Global Sr. Director, SAP Business AI", company: "SAP", image: speakerNaga },
+const speakers = [
+  {
+    name: "Sobhitha Neelanath",
+    title: "Senior Engineering Leader",
+    company: "Salesforce",
+    image: speakerSobhitha,
+    linkedin: "https://www.linkedin.com/in/sobhitha-neelanath/",
+  },
+  {
+    name: "Bobbie Carlton",
+    title: "Founder",
+    company: "Innovation Women",
+    image: speakerBobbie,
+    linkedin: "https://www.linkedin.com/in/bobbiecarlton/",
+  },
+  {
+    name: "Bhagyasrie M Masorkar",
+    title: "AGM CMT (Enterprise Business)",
+    company: "Sify Technologies Limited",
+    image: speakerBhagyasrie,
+    linkedin: "https://www.linkedin.com/in/bhagyashree-masurkar/",
+  },
+  {
+    name: "Chaitra Rao",
+    title: "Founder & Managing Partner",
+    company: "People Impact",
+    image: speakerChaitra,
+    linkedin: "https://www.linkedin.com/in/craopeopleimpact/",
+  },
+  {
+    name: "Madhura DasGupta Sinha",
+    title: "Founder",
+    company: "Aspire For Her",
+    image: speakerMadhura,
+    linkedin: "https://www.linkedin.com/in/madhura-dasgupta-sinha/",
+  },
+  {
+    name: "Su Jella",
+    title: "Executive & Advisor",
+    company: "Nano Insights",
+    image: speakerSu,
+    linkedin: "https://www.linkedin.com/in/sujella/",
+  },
+  {
+    name: "Jacintha Jayachandran",
+    title: "Founder",
+    company: "HopeWorks Foundation",
+    image: speakerJacintha,
+    linkedin: "https://www.linkedin.com/in/jacintha-jayachandran-empowering1milliongirls/",
+  },
+  {
+    name: "Yashaswini Vismaya",
+    title: "Artificial Intelligence Engineer",
+    company: "LTIMindTree",
+    image: speakerYashaswini,
+    linkedin: "https://www.linkedin.com/in/yash-vis/",
+  },
 ];
 
 const SpeakersSection = () => {
@@ -27,49 +81,39 @@ const SpeakersSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="text-center mb-14"
         >
-          <span className="text-sm font-semibold text-secondary uppercase tracking-widest mb-4 block neon-glow-text-subtle">
+          <span className="text-sm font-semibold text-secondary uppercase tracking-widest mb-4 block">
             Learn from the Best
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-foreground mb-6 neon-glow-text-subtle">
-            Meet Our Speakers
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-foreground">
+            Our Speakers
           </h2>
-          <div className="inline-flex items-center gap-2 gradient-sunrise rounded-full px-6 py-2 mb-4 neon-glow-btn">
-            <span className="text-sm font-bold text-primary-foreground">
-              ✨ Speakers for Empower Her 2.0 will be announced soon
-            </span>
-          </div>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-center mb-10"
-        >
-          <h3 className="text-xl font-heading font-semibold text-muted-foreground mb-8">
-            Past Edition Speakers
-          </h3>
-        </motion.div>
-
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 sm:gap-8">
-          {pastSpeakers.map((speaker, index) => (
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8 sm:gap-10">
+          {speakers.map((speaker, index) => (
             <motion.div
               key={speaker.name}
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.4, delay: 0.1 * index }}
+              transition={{ duration: 0.4, delay: 0.08 * index }}
               className="text-center group"
             >
-              <div className="mx-auto mb-4 w-36 h-36 sm:w-40 sm:h-40 gradient-ring transition-shadow duration-300">
-                <div className="w-full h-full rounded-full overflow-hidden bg-card">
-                  <img
-                    src={speaker.image}
-                    alt={speaker.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                </div>
+              <div className="relative mx-auto mb-4 w-32 h-32 sm:w-36 sm:h-36 rounded-full overflow-hidden border-2 border-border group-hover:border-primary/40 transition-colors duration-300">
+                <img
+                  src={speaker.image}
+                  alt={speaker.name}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <a
+                  href={speaker.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="absolute inset-0 flex items-center justify-center bg-background/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                >
+                  <Linkedin className="w-6 h-6 text-foreground" />
+                </a>
               </div>
               <h4 className="font-heading font-bold text-sm sm:text-base text-foreground mb-1">{speaker.name}</h4>
               <p className="text-xs sm:text-sm text-muted-foreground">{speaker.title}</p>
@@ -77,17 +121,6 @@ const SpeakersSection = () => {
             </motion.div>
           ))}
         </div>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.5, delay: 0.6 }}
-          className="text-center mt-10"
-        >
-          <Badge variant="outline" className="text-sm px-5 py-2 neon-border text-primary font-semibold">
-            🔔 More Announcements Coming Soon
-          </Badge>
-        </motion.div>
       </div>
     </section>
   );
