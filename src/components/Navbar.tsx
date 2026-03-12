@@ -28,6 +28,7 @@ const Navbar = () => {
     const next = !dark;
     setDark(next);
     document.documentElement.classList.toggle("dark", next);
+    document.documentElement.classList.toggle("light", !next);
   };
 
   return (
