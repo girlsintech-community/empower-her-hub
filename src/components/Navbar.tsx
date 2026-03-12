@@ -107,11 +107,6 @@ const Navbar = () => {
                   {link.label}
                 </motion.a>
               ))}
-              <a href={REGISTER_URL} target="_blank" rel="noopener noreferrer" className="block mt-3">
-                <Button variant="hero" size="sm" className="w-full rounded-full">
-                  Register Now
-                </Button>
-              </a>
             </div>
           </motion.div>
         )}
