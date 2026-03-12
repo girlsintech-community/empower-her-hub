@@ -3,7 +3,7 @@ import { useRef } from "react";
 import { Button } from "@/components/ui/button";
 import CountdownTimer from "@/components/CountdownTimer";
 import { CalendarDays, MapPin, Users } from "lucide-react";
-import heroBg from "@/assets/hero-bg.jpg";
+import Aurora from "@/components/Aurora";
 
 const REGISTER_URL = "https://luma.com/vmnm3u4c";
 
