@@ -55,7 +55,6 @@ const HeroSection = () => {
           {[
             { icon: CalendarDays, text: "8 March 2026" },
             { icon: MapPin, text: "Virtual" },
-            { icon: Users, text: "Free Entry" },
           ].map(({ icon: Icon, text }) => (
             <div key={text} className="flex items-center gap-2.5 text-sm sm:text-base font-medium">
               <div className="w-8 h-8 rounded-full bg-foreground/10 backdrop-blur-sm flex items-center justify-center border border-foreground/20">
