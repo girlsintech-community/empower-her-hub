@@ -3,14 +3,15 @@ import { useRef } from "react";
 import { Play } from "lucide-react";
 
 const videos = [
-  { id: "olgVuJ79HbY", title: "Session 1" },
-  { id: "zra81UZd6nA", title: "Session 2" },
-  { id: "j_1Bqtf9FRA", title: "Session 3" },
-  { id: "5236jNJXB4s", title: "Session 4" },
-  { id: "QIJxhEO8WE4", title: "Session 5" },
-  { id: "_DH-gVUPICM", title: "Session 6" },
-  { id: "kKUN1YnvRSU", title: "Session 7" },
-  { id: "h5tUFMQNrAQ", title: "Session 8" },
+  { id: "olgVuJ79HbY", title: "Career in Tech", speaker: "Sobhitha Neelanath" },
+  { id: "zra81UZd6nA", title: "Building Your Personal Brand", speaker: "Bobbie Carlton" },
+  { id: "j_1Bqtf9FRA", title: "Enterprise Business Leadership", speaker: "Bhagyasrie M Masorkar" },
+  { id: "5236jNJXB4s", title: "People & Culture", speaker: "Chaitra Rao" },
+  { id: "QIJxhEO8WE4", title: "Aspiring for Change", speaker: "Madhura DasGupta Sinha" },
+  { id: "_DH-gVUPICM", title: "Executive Insights", speaker: "Su Jella" },
+  { id: "kKUN1YnvRSU", title: "Empowering 1 Million Girls", speaker: "Jacintha Jayachandran" },
+  { id: "h5tUFMQNrAQ", title: "AI & Technology", speaker: "Yashaswini Vismaya" },
+  { id: "hTu4mLX3asc", title: "Caregiving & Leadership", speaker: "Bhavana Issar" },
 ];
 
 const RecordingsSection = () => {
