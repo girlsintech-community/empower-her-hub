@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ExternalLink, Trophy, Award, CheckCircle, Star, ArrowLeft } from "lucide-react";
+import { ExternalLink, Trophy, Award, CheckCircle, Users, Globe, Sparkles, ArrowLeft } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Moon, Sun } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -31,6 +31,12 @@ const portfolios = [
   { name: "Lakkaram Rajasri", url: "https://my-portfolio-mocha-pi-24.vercel.app" },
   { name: "Deepa Anand Parshekar", url: "https://deepa-parshekar-portofolio.my.canva.site/" },
   { name: "Himanshi", url: "https://himanshi-portfolio-sage.vercel.app/" },
+];
+
+const impactStats = [
+  { label: "Participants", value: "26+", icon: Users },
+  { label: "Portfolios Shipped", value: "26", icon: Globe },
+  { label: "Days of Sprint", value: "7", icon: Sparkles },
 ];
 
 const fadeUp = {
@@ -79,58 +85,64 @@ const PortfolioBuildSprint = () => {
       </nav>
 
       {/* Hero */}
-      <section className="pt-32 pb-20 px-4 text-center">
+      <section className="pt-32 pb-16 px-4 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="max-w-4xl mx-auto"
         >
-          <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
-            Girls Leading Tech Initiative
+          <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+            Event Completed ✅
           </span>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
             Portfolio Build Sprint
           </h1>
           <p className="text-xl sm:text-2xl text-muted-foreground font-medium mb-4">
-            Build Your Portfolio. Build Your Confidence. Build Your Future.
+            They Built. They Shipped. They Showed Up.
           </p>
           <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            A focused, action-driven initiative by Girls Leading Tech to help you build your own professional portfolio website from scratch.
+            A 7-day action-driven sprint by Girls Leading Tech where 26 women in tech built and deployed their professional portfolio websites from scratch.
           </p>
         </motion.div>
       </section>
 
-      {/* The Story */}
-      <section className="py-16 px-4">
+      {/* Impact Stats */}
+      <section className="pb-16 px-4">
         <div className="max-w-3xl mx-auto">
-          <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="space-y-6">
-            <h2 className="text-2xl font-bold mb-6">Imagine this.</h2>
-            <div className="space-y-4 text-muted-foreground leading-relaxed">
-              <p>Placement season arrives. Everyone is updating resumes. Everyone is applying everywhere.</p>
-              <p>And then there's <span className="text-foreground font-medium">you</span>.</p>
-              <p>Instead of sending just a PDF resume, you drop a clean, powerful personal portfolio website — showcasing your projects, skills, story, and personality.</p>
-              <p className="text-foreground font-medium">That one link makes recruiters pause.<br />That one link makes you stand out.<br />That one link changes the conversation.</p>
-            </div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="grid grid-cols-3 gap-4"
+          >
+            {impactStats.map((stat) => (
+              <div key={stat.label} className="text-center p-6 rounded-xl border border-border/50 bg-card/30">
+                <stat.icon className="w-6 h-6 text-primary mx-auto mb-3" />
+                <p className="text-3xl sm:text-4xl font-bold text-foreground mb-1">{stat.value}</p>
+                <p className="text-sm text-muted-foreground">{stat.label}</p>
+              </div>
+            ))}
           </motion.div>
         </div>
       </section>
 
-      {/* What is Build Sprint Week */}
+      {/* What Was It */}
       <section className="py-16 px-4 bg-card/50">
         <div className="max-w-3xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="text-2xl font-bold mb-6">What is Build Sprint Week?</h2>
+            <h2 className="text-2xl font-bold mb-6">What Was Build Sprint Week?</h2>
             <p className="text-muted-foreground mb-6 leading-relaxed">
-              Build Sprint Week is a guided portfolio-building challenge designed especially for college girls in tech who want to:
+              Build Sprint Week was a guided portfolio-building challenge designed especially for college women in tech. Over 7 days, participants went from zero to a fully deployed personal portfolio website — learning to brand themselves, structure content, and ship something real.
             </p>
             <div className="grid sm:grid-cols-2 gap-3">
               {[
-                "Prepare early for placements",
-                "Stand out in internship applications",
-                "Create a strong digital presence",
-                "Gain hands-on website-building experience",
-                "Finally showcase their projects properly",
+                "Planned their personal brand",
+                "Structured portfolio content",
+                "Built and deployed their website",
+                "Added projects, skills & achievements",
+                "Polished UI/UX & responsiveness",
+                "Published it live for the world to see",
               ].map((item) => (
                 <div key={item} className="flex items-start gap-3 p-3 rounded-lg bg-background/50">
                   <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
@@ -142,36 +154,26 @@ const PortfolioBuildSprint = () => {
         </div>
       </section>
 
-      {/* What You'll Do */}
+      {/* The Story / Why It Mattered */}
       <section className="py-16 px-4">
         <div className="max-w-3xl mx-auto">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="text-2xl font-bold mb-6">What You'll Do During the Sprint</h2>
-            <div className="space-y-3">
-              {[
-                "Plan their personal brand",
-                "Structure their portfolio content",
-                "Build and deploy their website",
-                "Add projects, skills, achievements, and contact details",
-                "Polish UI/UX and responsiveness",
-                "Publish it live",
-              ].map((step, i) => (
-                <div key={step} className="flex items-center gap-4 p-4 rounded-lg border border-border/50 bg-card/30">
-                  <span className="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center text-sm font-bold shrink-0">
-                    {i + 1}
-                  </span>
-                  <span className="text-foreground text-sm">{step}</span>
-                </div>
-              ))}
+          <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="space-y-6">
+            <h2 className="text-2xl font-bold mb-6">Why It Mattered</h2>
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <p>Placement season is intense. Everyone sends PDF resumes. Everyone applies everywhere.</p>
+              <p>But these 26 women did something different — they each built a <span className="text-foreground font-medium">clean, powerful personal portfolio website</span> showcasing their projects, skills, story, and personality.</p>
+              <p className="text-foreground font-medium">
+                That one link made recruiters pause.<br />
+                That one link made them stand out.<br />
+                That one link changed the conversation.
+              </p>
+              <p>By the end of the sprint, every participant didn't just "learn" — they <span className="text-foreground font-medium">shipped something real</span>.</p>
             </div>
-            <p className="mt-6 text-muted-foreground italic">
-              By the end of the sprint, you won't just "learn." You will <span className="text-foreground font-medium">ship something real</span>.
-            </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Prizes */}
+      {/* Prizes Awarded */}
       <section className="py-16 px-4 bg-card/50">
         <div className="max-w-3xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
@@ -188,71 +190,15 @@ const PortfolioBuildSprint = () => {
                 </ul>
               </div>
               <div className="p-6 rounded-xl border border-border/50 bg-card/50">
-                <Award className="w-8 h-8 text-accent mb-4" />
-                <h3 className="font-bold text-lg mb-3">All Participants</h3>
+                <Award className="w-8 h-8 text-primary mb-4" />
+                <h3 className="font-bold text-lg mb-3">All Participants Received</h3>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li>• Participation Certificate</li>
                   <li>• A fully built, live portfolio website</li>
-                  <li>• Ready for placements</li>
+                  <li>• Placement-ready digital presence</li>
                 </ul>
               </div>
             </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Evaluation & Rules */}
-      <section className="py-16 px-4">
-        <div className="max-w-3xl mx-auto">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <div className="grid sm:grid-cols-2 gap-8">
-              <div>
-                <h2 className="text-2xl font-bold mb-4">Evaluation Criteria</h2>
-                <div className="space-y-2">
-                  {[
-                    "Clarity of personal branding",
-                    "Project presentation",
-                    "Design and UI/UX",
-                    "Responsiveness (mobile-friendly)",
-                    "Overall professionalism",
-                    "Creativity",
-                  ].map((c) => (
-                    <div key={c} className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <Star className="w-4 h-4 text-accent shrink-0" />
-                      <span>{c}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div>
-                <h2 className="text-2xl font-bold mb-4">Important Rules</h2>
-                <ul className="space-y-3 text-sm text-muted-foreground">
-                  <li>• Website must be live and publicly accessible</li>
-                  <li>• Clean UI, proper structure, and clarity will be considered</li>
-                  <li>• Submission must be done before the deadline</li>
-                  <li>• Individual participation only</li>
-                  <li>• Late submissions will not be considered for prizes</li>
-                  <li>• Decision of the evaluation panel will be final</li>
-                  <li>• You can either vibe code or hard code your portfolio</li>
-                </ul>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Closing CTA */}
-      <section className="py-16 px-4 bg-card/50">
-        <div className="max-w-3xl mx-auto text-center">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="text-2xl font-bold mb-4">Why You Shouldn't Miss This</h2>
-            <p className="text-muted-foreground leading-relaxed mb-6">
-              Because someday, a recruiter will Google your name. What they find should represent your ambition. Build Sprint Week is not about competition — it's about confidence, preparation, and showing up for your future self.
-            </p>
-            <p className="text-lg font-medium text-foreground">
-              Your future deserves more than just a resume.<br />
-              <span className="text-primary">It deserves a presence.</span>
-            </p>
           </motion.div>
         </div>
       </section>
@@ -287,12 +233,28 @@ const PortfolioBuildSprint = () => {
                 </div>
                 <p className="text-sm font-medium text-foreground mb-1 truncate">{p.name}</p>
                 <div className="flex items-center justify-center gap-1 text-xs text-muted-foreground group-hover:text-primary transition-colors">
-                  <span>View</span>
+                  <span>View Portfolio</span>
                   <ExternalLink className="w-3 h-3" />
                 </div>
               </motion.a>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Closing */}
+      <section className="py-16 px-4 bg-card/50">
+        <div className="max-w-3xl mx-auto text-center">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <h2 className="text-2xl font-bold mb-4">The Impact Lives On</h2>
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              Build Sprint Week was never about competition — it was about confidence, preparation, and showing up for your future self. Every portfolio built during this sprint is now a living, breathing digital presence that will serve these women throughout their careers.
+            </p>
+            <p className="text-lg font-medium text-foreground">
+              26 women. 26 portfolios. One powerful community.<br />
+              <span className="text-primary">This is just the beginning.</span>
+            </p>
+          </motion.div>
         </div>
       </section>
 
