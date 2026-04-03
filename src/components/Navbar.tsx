@@ -6,6 +6,7 @@ const navLinks = [
   { label: "Speakers", href: "#speakers" },
   { label: "Recordings", href: "#recordings" },
   { label: "Team", href: "#team" },
+  { label: "Portfolio Build Sprint", href: "/portfolio-build-sprint" },
 ];
 
 const Navbar = () => {
