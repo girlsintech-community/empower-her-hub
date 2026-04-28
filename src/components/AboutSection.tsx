@@ -55,23 +55,29 @@ const AboutSection = () => {
         {/* Bento grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5">
           {/* Featured big card */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5 }}
-            className="md:col-span-2 md:row-span-2 relative rounded-3xl p-8 sm:p-10 overflow-hidden border border-border/40 bg-gradient-to-br from-primary/15 via-card/80 to-secondary/10 group hover:border-primary/40 transition-all duration-500"
-          >
-            <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-primary/20 blur-3xl group-hover:bg-primary/30 transition-colors duration-500" />
-            <div className="relative">
-              <div className="w-14 h-14 rounded-2xl gradient-sunrise flex items-center justify-center mb-5 shadow-lg shadow-primary/30">
-                <values[0].icon className="w-7 h-7 text-primary-foreground" />
-              </div>
-              <h3 className="text-2xl sm:text-3xl font-heading font-bold mb-3">{values[0].title}</h3>
-              <p className="text-muted-foreground text-base sm:text-lg leading-relaxed max-w-md">
-                {values[0].description}
-              </p>
-            </div>
-          </motion.div>
+          {(() => {
+            const Featured = values[0];
+            const FeaturedIcon = Featured.icon;
+            return (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.5 }}
+                className="md:col-span-2 md:row-span-2 relative rounded-3xl p-8 sm:p-10 overflow-hidden border border-border/40 bg-gradient-to-br from-primary/15 via-card/80 to-secondary/10 group hover:border-primary/40 transition-all duration-500"
+              >
+                <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-primary/20 blur-3xl group-hover:bg-primary/30 transition-colors duration-500" />
+                <div className="relative">
+                  <div className="w-14 h-14 rounded-2xl gradient-sunrise flex items-center justify-center mb-5 shadow-lg shadow-primary/30">
+                    <FeaturedIcon className="w-7 h-7 text-primary-foreground" />
+                  </div>
+                  <h3 className="text-2xl sm:text-3xl font-heading font-bold mb-3">{Featured.title}</h3>
+                  <p className="text-muted-foreground text-base sm:text-lg leading-relaxed max-w-md">
+                    {Featured.description}
+                  </p>
+                </div>
+              </motion.div>
+            );
+          })()}
 
           {values.slice(1).map((value, i) => (
             <motion.div
